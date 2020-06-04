@@ -1,0 +1,13 @@
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^neekids\.maestralumbrera\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.neekids\.maestralumbrera\.com$
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^/?$ "https\:\/\/www\.neekids\.com\/" [R=301,L]
+RewriteCond %{HTTP_HOST} ^neekids\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.neekids\.com$
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^app$ "http\:\/\/www\.app\.neekids\.com\/" [R=301,L]
+
